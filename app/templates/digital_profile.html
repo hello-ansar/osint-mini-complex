@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="grid cols-2">
+  <div class="card">
+    <div class="eyebrow">Запрос</div>
+    <h2>Username / Email Intelligence</h2>
+    <p class="muted">
+      Первичная цифровая разведка по email и username: проверка занятости ника,
+      регистраций и следов присутствия на публичных платформах.
+    </p>
+
+    <form id="digital-profile-form" class="stack-form">
+      <label class="form-label">Режим
+        <select id="scan-mode" name="mode">
+          <option value="combined">Email + username</option>
+          <option value="email">Только email</option>
+          <option value="username">Только username</option>
+        </select>
+      </label>
+
+      <label class="form-label">Email
+        <input id="scan-email" type="email" name="email" placeholder="target@example.com">
+      </label>
+
+      <label class="form-label">Username
+        <input id="scan-username" type="text" name="username" placeholder="target_alias">
+      </label>
+
+      <label class="form-label">Категория
+        <select id="scan-category" name="category">
+          <option value="">Все категории</option>
+          <option value="dev">Dev</option>
+          <option value="social">Social</option>
+          <option value="creator">Creator</option>
+        </select>
+      </label>
+
+      <label class="form-label">Точечный модуль
+        <input id="scan-module" type="text" name="module" placeholder="github / reddit / instagram">
+      </label>
+
+      <label class="form-label">Файл прокси (опционально)
+        <input id="scan-proxy-file" type="text" name="proxy_file" placeholder="/path/to/proxies.txt">
+      </label>
+
+      <label class="form-check">
+        <input id="scan-validate-proxies" type="checkbox" name="validate_proxies">
+        <span>Провалидировать прокси перед запуском</span>
+      </label>
+
+      <div class="form-actions">
+        <button id="scan-submit-btn" class="btn" type="submit">Запустить разведку</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">Аналитическая сводка</div>
+    <h2>Вывод модуля</h2>
+
+    <div id="scan-live-box" class="live-box hidden">
+      <div class="live-row">
+        <div class="live-dot"></div>
+        <div>
+          <div id="scan-live-status" class="live-status">Подготовка к запуску...</div>
+          <div id="scan-live-timer" class="muted">0.0 сек</div>
+        </div>
+      </div>
+
+      <div class="progress-shell">
+        <div id="scan-live-progress" class="progress-bar"></div>
+      </div>
+
+      <div id="scan-live-steps" class="summary-list compact">
+        <div class="muted">Ожидание запуска...</div>
+      </div>
+    </div>
+
+    <div id="profile-summary" class="summary-list">
+      <div class="muted">Ожидание параметров поиска...</div>
+    </div>
+  </div>
+</section>
+
+<section class="grid cols-4" id="profile-stats"></section>
+
+<section class="grid cols-2">
+  <div class="card">
+    <div class="eyebrow">Совпадения по email</div>
+    <div id="email-results"></div>
+  </div>
+  <div class="card">
+    <div class="eyebrow">Совпадения по username</div>
+    <div id="username-results"></div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="eyebrow">Выявленные платформы</div>
+  <div id="profile-platforms"></div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+window.addEventListener("DOMContentLoaded", () => initDigitalProfile());
+</script>
+{% endblock %}

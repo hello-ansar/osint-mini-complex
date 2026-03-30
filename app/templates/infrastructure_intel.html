@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="grid cols-2">
+  <div class="card">
+    <div class="eyebrow">Запрос</div>
+    <h2>Infrastructure Intelligence</h2>
+    <p class="muted">
+      Анализ публичной веб-инфраструктуры, поддоменов, SSL-сигналов и потенциальных origin IP.
+    </p>
+
+    <form id="infra-form" class="stack-form">
+      <label class="form-label">Домен
+        <input id="infra-domain" type="text" placeholder="example.com">
+      </label>
+
+      <button id="infra-submit-btn" class="btn" type="submit">Запустить анализ</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">Аналитическая сводка</div>
+    <h2>Вывод модуля</h2>
+    <div id="infra-summary" class="summary-list">
+      <div class="muted">Ожидание запуска...</div>
+    </div>
+  </div>
+</section>
+
+<section class="grid cols-3">
+  <div class="card">
+    <div class="eyebrow">Origin candidates</div>
+    <div id="infra-origin"></div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">SSL signals</div>
+    <div id="infra-ssl"></div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">Historical / subdomain signals</div>
+    <div id="infra-history"></div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="eyebrow">Raw preview</div>
+  <pre id="infra-raw" style="white-space: pre-wrap;"></pre>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+window.addEventListener("DOMContentLoaded", () => initInfrastructureIntel());
+</script>
+{% endblock %}

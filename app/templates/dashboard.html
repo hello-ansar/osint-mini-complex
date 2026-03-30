@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="grid cols-4">
+  <div class="card stat"><div class="label">Активные модули</div><div class="value">3</div></div>
+  <div class="card stat"><div class="label">Источники</div><div class="value">СМИ / соцсети / изображения</div></div>
+  <div class="card stat"><div class="label">Режим</div><div class="value">Демо</div></div>
+  <div class="card stat"><div class="label">Профиль заказчика</div><div class="value">Оборона / безопасность</div></div>
+</section>
+<section class="grid cols-2">
+  <div class="card hero">
+    <div class="eyebrow">Обзор платформы</div>
+    <h2>Полный цикл OSINT — от сигнала до аналитического вывода</h2>
+    <p>Платформа объединяет выявление событий, анализ визуальных материалов, интернет-поиск дубликатов, первичное построение цифрового профиля по email и username, а также подготовку аналитических выводов в едином интерфейсе.</p>
+    <div class="hero-actions">
+      <a class="btn" href="/modules/event-detection">Открыть Event Detection</a>
+      <a class="btn secondary" href="/modules/image-geo">Открыть Image & Geo</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="eyebrow">Статус модулей</div>
+    <div class="module-list">
+      <div class="module-row"><span>1. Выявление событий</span><span class="tag green">Готов</span></div>
+      <div class="module-row"><span>2. Анализ изображений и геолокации</span><span class="tag green">Готов</span></div>
+      <div class="module-row"><span>3. Username / Email Intelligence</span><span class="tag green">Готов</span></div>
+      <div class="module-row"><span>4. Graph Engine</span><span class="tag gray">Следующий этап</span></div>
+      <div class="module-row"><span>5. Geo Intelligence</span><span class="tag gray">Следующий этап</span></div>
+    </div>
+  </div>
+</section>
+{% endblock %}

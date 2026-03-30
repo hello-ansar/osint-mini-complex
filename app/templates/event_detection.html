@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="grid cols-4" id="event-stats"></section>
+<section class="card">
+  <div class="section-header"><div><div class="eyebrow">Лента</div><h2>Выявленные события</h2></div></div>
+  <div id="event-list" class="event-list"></div>
+</section>
+{% endblock %}
+{% block scripts %}<script>window.addEventListener("DOMContentLoaded",()=>initEventDetection());</script>{% endblock %}

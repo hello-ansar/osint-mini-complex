@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Tashkent Square protest angle",
+    "image_url": "/data/image_index/tashkent_square.jpg",
+    "page_url": "https://example.local/tashkent-square",
+    "host": "news.uz",
+    "passage": "Urban square / civic gathering visual reference",
+    "location_hint": "Tashkent",
+    "phash": "f0c0e0f0f0c0c080"
+  },
+  {
+    "title": "Andijan checkpoint visual reference",
+    "image_url": "/data/image_index/checkpoint_andijan.jpg",
+    "page_url": "https://example.local/checkpoint",
+    "host": "security.local",
+    "passage": "Checkpoint / transport inspection reference",
+    "location_hint": "Andijan",
+    "phash": "f0f0d0c0e0c08080"
+  },
+  {
+    "title": "Samarkand industrial zone smoke reference",
+    "image_url": "/data/image_index/samarkand_industrial.jpg",
+    "page_url": "https://example.local/industrial",
+    "host": "incident.local",
+    "passage": "Industrial / smoke / emergency reference",
+    "location_hint": "Samarkand",
+    "phash": "e0f0f0d0c0808080"
+  },
+  {
+    "title": "Almaty avenue city frame",
+    "image_url": "/data/image_index/almaty_street.jpg",
+    "page_url": "https://example.local/almaty-avenue",
+    "host": "city.local",
+    "passage": "Urban avenue / traffic reference",
+    "location_hint": "Almaty",
+    "phash": "f0e0f0c0c0c08080"
+  }
+]
