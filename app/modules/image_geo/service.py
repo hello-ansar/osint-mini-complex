@@ -4,10 +4,14 @@ import json
 from collections import Counter
 from PIL import Image
 import imagehash
-from pillow_heif import register_heif_opener
+
 from PIL import Image, UnidentifiedImageError
 
-register_heif_opener()
+try:
+    from pillow_heif import register_heif_opener
+    register_heif_opener()
+except Exception:
+    pass
 
 from .ela import compute_ela_score
 from .ai_detector import detect_synthetic_risk
